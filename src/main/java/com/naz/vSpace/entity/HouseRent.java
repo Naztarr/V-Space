@@ -20,6 +20,4 @@ public class HouseRent extends BaseEntity{
     private House house;
     @Column(name = "is_approved")
     private Boolean isApproved;
-
-
 }
