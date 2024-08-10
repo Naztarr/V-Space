@@ -180,8 +180,6 @@ V-Space is a comprehensive digital property rental application designed for rent
    spring.datasource.username=postgres
    spring.datasource.password=${DB_PASSWORD}
    
-   server.port=8025
-   
    spring.security.user.name=VSpace
    spring.security.user.password=${SECURITY_PW}
    
@@ -235,7 +233,7 @@ After starting the application, you can access it via:
 ## API Documentation
 The API documentation is available via Swagger at:
 
-http://localhost:8025/swagger-ui/index.html#
+https://v-space-production.up.railway.app/swagger-ui/index.html#/
 
 This provides interactive documentation for all the endpoints, allowing you to test API requests directly from your browser.
 
