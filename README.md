@@ -2,6 +2,7 @@
 V-Space is a comprehensive digital property rental application designed for renting various types of properties including houses, land, and warehouses. The application integrates several modern technologies to provide a robust and efficient platform for property management.
 ## Table of Contents
 
+- [Project Structure](#project-structure)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
@@ -10,6 +11,138 @@ V-Space is a comprehensive digital property rental application designed for rent
 - [API Documentation](#api-documentation)
 - [Usage](#usage)
 - [Contributing](#contributing)
+
+## Project Structure
+
+```
+├── HELP.md
+├── README.md
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── naz
+│   │   │           └── vSpace
+│   │   │               ├── VSpaceApplication.java
+│   │   │               ├── config
+│   │   │               │   ├── CloudinaryConfig.java
+│   │   │               │   ├── DatabaseSeeder.java
+│   │   │               │   ├── EmailConfiguration.java
+│   │   │               │   ├── JwtAuthenticationFilter.java
+│   │   │               │   ├── LogoutConfiguration.java
+│   │   │               │   ├── RabbitMqConfig.java
+│   │   │               │   ├── SecurityConfiguration.java
+│   │   │               │   ├── SecurityFilterConfiguration.java
+│   │   │               │   └── SwaggerConfiguration.java
+│   │   │               ├── controller
+│   │   │               │   ├── AdminController.java
+│   │   │               │   ├── AuthController.java
+│   │   │               │   ├── HouseController.java
+│   │   │               │   ├── LandController.java
+│   │   │               │   ├── UserController.java
+│   │   │               │   └── WarehouseController.java
+│   │   │               ├── dto
+│   │   │               │   ├── AdminDto.java
+│   │   │               │   ├── HouseDto.java
+│   │   │               │   ├── LandDto.java
+│   │   │               │   ├── LoginDto.java
+│   │   │               │   ├── OwnerCredentials.java
+│   │   │               │   ├── ResetPasswordDto.java
+│   │   │               │   ├── SignupDto.java
+│   │   │               │   └── WarehouseDto.java
+│   │   │               ├── entity
+│   │   │               │   ├── BaseEntity.java
+│   │   │               │   ├── House.java
+│   │   │               │   ├── HouseRent.java
+│   │   │               │   ├── Land.java
+│   │   │               │   ├── LandRent.java
+│   │   │               │   ├── OwnerCredential.java
+│   │   │               │   ├── User.java
+│   │   │               │   ├── Warehouse.java
+│   │   │               │   └── WarehouseRent.java
+│   │   │               ├── enums
+│   │   │               │   ├── IdType.java
+│   │   │               │   ├── Role.java
+│   │   │               │   ├── Type.java
+│   │   │               │   └── VerifyType.java
+│   │   │               ├── exception
+│   │   │               │   ├── VSpaceException.java
+│   │   │               │   └── VSpaceExceptionHandler.java
+│   │   │               ├── mapper
+│   │   │               │   ├── CredentialMapper.java
+│   │   │               │   ├── HouseMapper.java
+│   │   │               │   ├── LandMapper.java
+│   │   │               │   ├── UserMapper.java
+│   │   │               │   └── WarehouseMapper.java
+│   │   │               ├── payload
+│   │   │               │   ├── ApiResponse.java
+│   │   │               │   ├── HouseData.java
+│   │   │               │   ├── LandData.java
+│   │   │               │   ├── OwnerCredentialData.java
+│   │   │               │   ├── UserData.java
+│   │   │               │   ├── UserResponse.java
+│   │   │               │   └── WarehouseData.java
+│   │   │               ├── repository
+│   │   │               │   ├── HouseRentRepository.java
+│   │   │               │   ├── HouseRepository.java
+│   │   │               │   ├── LandRentRepository.java
+│   │   │               │   ├── LandRepository.java
+│   │   │               │   ├── OwnerCredentialRepository.java
+│   │   │               │   ├── UserRepository.java
+│   │   │               │   ├── WarehouseRentRepository.java
+│   │   │               │   └── WarehouseRepository.java
+│   │   │               ├── service
+│   │   │               │   ├── AdminService.java
+│   │   │               │   ├── AuthenticationService.java
+│   │   │               │   ├── CloudinaryService.java
+│   │   │               │   ├── EmailConsumerService.java
+│   │   │               │   ├── EmailProducerService.java
+│   │   │               │   ├── EmailService.java
+│   │   │               │   ├── HouseService.java
+│   │   │               │   ├── JwtService.java
+│   │   │               │   ├── LandService.java
+│   │   │               │   ├── UserService.java
+│   │   │               │   ├── WarehouseService.java
+│   │   │               │   └── serviceImplementation
+│   │   │               │       ├── AdminImplementation.java
+│   │   │               │       ├── AuthImplementation.java
+│   │   │               │       ├── CloudinaryImplementation.java
+│   │   │               │       ├── EmailImplementation.java
+│   │   │               │       ├── HouseImplementation.java
+│   │   │               │       ├── JwtImplementation.java
+│   │   │               │       ├── LandImplementation.java
+│   │   │               │       ├── UserImplementation.java
+│   │   │               │       └── WarehouseImplementation.java
+│   │   │               └── util
+│   │   │                   ├── AdminPasswordGenerator.java
+│   │   │                   ├── EmailMessage.java
+│   │   │                   ├── ForgotPasswordTemplate.java
+│   │   │                   ├── RentNotificationTemplate.java
+│   │   │                   ├── SignupEmailTemplate.java
+│   │   │                   └── UserUtil.java
+│   │   └── resources
+│   │       ├── application.properties
+│   │       ├── static
+│   │       │   └── Screenshots
+│   │       │       ├── Swagger  2024-08-10 at 19.53.52.png
+│   │       │       ├── Swagger  2024-08-10 at 19.54.14.png
+│   │       │       ├── Swagger  2024-08-10 at 19.54.42.png
+│   │       │       ├── Swagger 2024-08-10 at 19.52.34.png
+│   │       │       ├── Swagger 2024-08-10 at 19.53.18.png
+│   │       │       ├── V-Space railway deployment.png
+│   │       │       └── V-Space-ERD.png
+│   │       └── templates
+│   └── test
+│       └── java
+│           └── com
+│               └── naz
+│                   └── vSpace
+│                       └── VSpaceApplicationTests.java
+
+```
 
 ## Features
 
@@ -24,8 +157,10 @@ V-Space is a comprehensive digital property rental application designed for rent
 
 - **Spring Boot:** Framework for building the application.
 - **Spring Security:** Authentication and authorization.
+- **SMTP:** Email messaging.
 - **Redis:** Caching for improved performance.
 - **RabbitMQ:** Messaging for handling asynchronous tasks.
+- **Cloudinary:** Uploading files.
 - **Swagger:** API documentation and testing.
 - **PostgreSQL:** Database for storing application data.
 
@@ -94,8 +229,8 @@ V-Space is a comprehensive digital property rental application designed for rent
 ## Running the Application
 After starting the application, you can access it via:
 
-- **Web Application:** http://localhost:8025
-- **Swagger API Documentation:** http://localhost:8025/swagger-ui/index.html#
+- **Web Application:** https://v-space-production.up.railway.app/
+- **Swagger API Documentation:** https://v-space-production.up.railway.app/swagger-ui/index.html#/
 
 ## API Documentation
 The API documentation is available via Swagger at:
